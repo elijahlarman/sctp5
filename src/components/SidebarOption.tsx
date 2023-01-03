@@ -5,7 +5,7 @@ import { db } from "../firebase";
 import { useCollection } from "react-firebase-hooks/firestore";
 //import { collection, addDoc } from "firebase/firestore";
 import { useDispatch } from "react-redux";
-import { enterRoom } from '../features/appSlice.js';
+import { enterRoom } from '../features/appSlice';
 function SidebarOption({ Icon, title, addChannelOption, id }: any) {
     const dispatch = useDispatch();
     const channelsRef = collection(db, 'rooms');

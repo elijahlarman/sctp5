@@ -40,7 +40,7 @@ if (loading) {
           <Login />
         ) : (
           <>
-      <Header></Header>
+     <Header></Header>
       <AppBody>
         <Sidebar />
         <Switch>

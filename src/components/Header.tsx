@@ -34,6 +34,8 @@ function Header() {
      </HeaderRight>
   </HeaderContainer>
   );
+} else {
+    return null;
 }
 }
 export default Header;

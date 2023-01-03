@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-
 const initialState = {
   roomId: null,
 };
@@ -16,6 +15,6 @@ export const appSlice = createSlice({
 
 export const { enterRoom } = appSlice.actions;
 
-export const selectRoomId = (state) => state.app.roomId;
+export const selectRoomId = (state: any) => state.app.roomId;
 
 export default appSlice.reducer;

@@ -1,7 +1,7 @@
 import { Button } from "@material-ui/core";
 import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { auth, db } from '../firebase.js';
+import { auth, db } from '../firebase';
 import { collection, addDoc, doc, Timestamp } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
 import firebase from "firebase/compat/app";

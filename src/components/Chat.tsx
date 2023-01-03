@@ -35,7 +35,7 @@ const Chat = () => {
         <>
           <Header>
             <HeaderLeft>
-              <h4><strong>#{roomDetails?.data().name}</strong></h4>
+              <h4><strong>#{roomDetails.data()!.name}</strong></h4>
               <StarBorderOutlinedIcon />
             </HeaderLeft>
 
@@ -64,7 +64,7 @@ const Chat = () => {
 
           <ChatInput 
             chatRef={chatRef}
-            channelName={roomDetails?.data().name}
+            channelName={roomDetails.data()!.name}
             channelId={roomId}
           />
         </>

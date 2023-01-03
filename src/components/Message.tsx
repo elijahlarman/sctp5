@@ -3,7 +3,7 @@ import React from 'react';
 
 
 
-const Message = ({message, timestamp, user, userImage}: any) => {
+const Message = ({message, timestamp, user, userImage}: {message: string, timestamp: any, user: string, userImage: string}) => {
   return (
     <MessageContainer>
       <img src={userImage} alt="profile image" />

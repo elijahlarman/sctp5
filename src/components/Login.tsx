@@ -5,7 +5,7 @@ import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../firebase';
 
 function Login() {
-    const signIn = (e: any) => {
+    const signIn = (e: React.FormEvent) => {
         e.preventDefault();
         signInWithPopup(auth, provider).catch(error => alert(error.message));
     }

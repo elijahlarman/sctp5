@@ -1,5 +1,5 @@
 import { Button } from "@material-ui/core";
-import React, { useRef } from 'react';
+import React, { RefObject, useRef } from 'react';
 import styled from 'styled-components';
 import { auth, db } from '../firebase';
 import { collection, addDoc, doc, Timestamp } from "firebase/firestore";
@@ -29,11 +29,14 @@ const ChatInputContainer = styled.div`
   }
 `;
 
-const ChatInput = ({channelName, channelId, chatRef}: any) => {
+const ChatInput = ({channelName, channelId, chatRef}: {channelName: string, channelId: string,
+chatRef: RefObject<HTMLDivElement>}) => {
   const [input, setInput] = useState('');
   const [user] = useAuthState(auth);
-
-  const sendMessage = (e: any) => {
+  const displayName = user?.displayName;
+  const photoURL = user?.photoURL;
+  
+  const sendMessage = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!channelId) {
@@ -47,11 +50,11 @@ const ChatInput = ({channelName, channelId, chatRef}: any) => {
       timestamp: Timestamp.now(),
       //user: user.displayName,
       //userImage: user.photoURL
-      user: user!.displayName,
-      userImage: user!.photoURL,
+      user: displayName,
+      userImage: photoURL,
     });
     
-    chatRef.current.scrollIntoView({
+    chatRef.current?.scrollIntoView({
       behavior: "smooth",
     });
     setInput('');
